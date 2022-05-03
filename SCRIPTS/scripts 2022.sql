@@ -1377,3 +1377,15 @@ insert into funcionarios values (997,'Reynolds','dreynoldsro@blogtalkradio.com',
 insert into funcionarios values (998,'Walker','kwalkerrp@unicef.org','Feminino','Games','2/13/2010',60363,'Account Coordinator',1);
 insert into funcionarios values (999,'Kennedy','lkennedyrq@edublogs.org','Masculino','Industrial','9/22/2004',48050,'Graphic Designer',2);
 insert into funcionarios values (1000,'Howard','showardrr@addtoany.com','Masculino','Bebês','11/7/2003',148687,'General Manager',3);
+
+/* FILTRANDO VALORES NULOS */
+
+SELECT NOME,SEXO, ENDERECO
+FROM CLIENTE
+WHERE EMAIL  IS NULL;
+
+SELECT NOME,SEXO, ENDERECO
+FROM CLIENTE
+WHERE EMAIL IS NOT NULL;
+
+/* IS OU IS NOT NULL */
