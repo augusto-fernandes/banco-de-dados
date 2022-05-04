@@ -1512,4 +1512,22 @@ CHAVE ESTRANGEIRA É A CHAVE PRIMARIA DE UMA TABELA QUE VAI ATÉ A OUTRA TABELA 
 
 /* EM RELACIONAMENTO 1 X N A CHAVE ESTRANGEIRA FICARA SEMRE NA CARDINALIDADE N*/
 
+INSERT INTO CLIENTE VALUES(NULL, 'JOAO','M','JOAO@IG.COM', '3424324123');
+INSERT INTO CLIENTE VALUES(NULL, 'CARLOS','M','CARLOS@IG.COM', '312324123');
+INSERT INTO CLIENTE VALUES(NULL, 'ANA','F','ANA@IG.COM', '4123424123');
+INSERT INTO CLIENTE VALUES(NULL, 'CLARA','F',NULL, '564325324123');
+INSERT INTO CLIENTE VALUES(NULL, 'JORGE','M','JORGE@IG.COM', '564674123');
+INSERT INTO CLIENTE VALUES(NULL, 'CELIA','F','CELIA@IG.COM', '253411123');
 
+SELECT * FROM CLIENTE;
+
++-----------+--------+------+---------------+--------------+
+| IDCLIENTE | NOME   | SEXO | EMAIL         | CPF          |
++-----------+--------+------+---------------+--------------+
+|         1 | JOAO   | M    | JOAO@IG.COM   | 3424324123   |
+|         2 | CARLOS | M    | CARLOS@IG.COM | 312324123    |
+|         3 | ANA    | F    | ANA@IG.COM    | 4123424123   |
+|         4 | CLARA  | F    | NULL          | 564325324123 |
+|         5 | JORGE  | M    | JORGE@IG.COM  | 564674123    |
+|         6 | CELIA  | F    | CELIA@IG.COM  | 253411123    |
++-----------+--------+------+---------------+--------------+
