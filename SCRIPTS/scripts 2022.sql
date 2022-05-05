@@ -1584,3 +1584,51 @@ WHERE SEXO = 'F'; /*SELEÇÃO*/
 SELECT NUMERO /*PROJECAO*/
 FROM /*ORIGEM*/
 WHERE TIPO = 'CEL'; /*SELEÇÃO*/
+
+/*JUNÇÃO*/
+
+SELECT NOME, SEXO, BAIRRO, CIDADE
+FROM CLIENTE
+INNER JOIN ENDERECO
+ON IDCLIENTE = ID_CLIENTE;
+
++--------+------+----------+----------------+
+| NOME   | SEXO | BAIRRO   | CIDADE         |
++--------+------+----------+----------------+
+| JOAO   | M    | CENTRO   | RIO DE JANEIRO |
+| CARLOS | M    | ESTACIO  | RIO DE JANEIRO |
+| ANA    | F    | JARDINS  | SAO PAULO      |
+| CLARA  | F    | CENTRO   | B. HORIZONTE   |
+| JORGE  | M    | CENTRO   | VITORIA        |
+| CELIA  | F    | FLAMENGO | RIO DE JANEIRO |
++--------+------+----------+----------------+
+
+--FILTRANDO
+SELECT NOME, SEXO, BAIRRO, CIDADE /*PROJECAO*/
+FROM CLIENTE /*ORIGEM*/
+  INNER JOIN ENDERECO /*JUNCAO*/
+  ON IDCLIENTE = ID_CLIENTE; 
+WHERE SEXO = 'F' /*SELECAO*/
+
+----------------------------------------------
+/*NOME, SEXO, EMAIL, TIPO. NUMERO*/
+
+SELECT NOME, SEXO, EMAIL, TIPO, NUMERO
+FROM CLIENTE
+  INNER JOIN TELEFONE
+  ON IDCLIENTE = ID_CLIENTE;
+
++--------+------+---------------+------+----------+
+| NOME   | SEXO | EMAIL         | TIPO | NUMERO   |
++--------+------+---------------+------+----------+
+| JORGE  | M    | JORGE@IG.COM  | CEL  | 78458743 |
+| JORGE  | M    | JORGE@IG.COM  | RES  | 56576876 |
+| JOAO   | M    | JOAO@IG.COM   | CEL  | 87866896 |
+| CARLOS | M    | CARLOS@IG.COM | COM  | 54768899 |
+| JOAO   | M    | JOAO@IG.COM   | RES  | 99667587 |
+| ANA    | F    | ANA@IG.COM    | CEL  | 78989765 |
+| ANA    | F    | ANA@IG.COM    | CEL  | 99766676 |
+| JOAO   | M    | JOAO@IG.COM   | COM  | 66687899 |
+| JORGE  | M    | JORGE@IG.COM  | RES  | 89986668 |
+| CARLOS | M    | CARLOS@IG.COM | CEL  | 88687909 |
++--------+------+---------------+------+----------+
