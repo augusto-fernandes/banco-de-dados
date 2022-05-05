@@ -1632,3 +1632,48 @@ FROM CLIENTE
 | JORGE  | M    | JORGE@IG.COM  | RES  | 89986668 |
 | CARLOS | M    | CARLOS@IG.COM | CEL  | 88687909 |
 +--------+------+---------------+------+----------+
+
+/*NOME, SEXO, BAIRRO, CIDADE, TIPO, NUMERO*/
+SELECT CLIENTE.NOME, CLIENTE.SEXO, ENDERECO.BAIRRO,ENDERECO.CIDADE, TELEFONE.TIPO, TELEFONE.NUMERO
+FROM CLIENTE
+  INNER JOIN  ENDERECO
+  ON CLIENTE.IDCLIENTE = ENDERECO.ID_CLIENTE
+    INNER JOIN  TELEFONE
+    ON CLIENTE.IDCLIENTE = TELEFONE.ID_CLIENTE;
+
++--------+------+---------+----------------+------+----------+
+| NOME   | SEXO | BAIRRO  | CIDADE         | TIPO | NUMERO   |
++--------+------+---------+----------------+------+----------+
+| JOAO   | M    | CENTRO  | RIO DE JANEIRO | CEL  | 87866896 |
+| JOAO   | M    | CENTRO  | RIO DE JANEIRO | RES  | 99667587 |
+| JOAO   | M    | CENTRO  | RIO DE JANEIRO | COM  | 66687899 |
+| CARLOS | M    | ESTACIO | RIO DE JANEIRO | COM  | 54768899 |
+| CARLOS | M    | ESTACIO | RIO DE JANEIRO | CEL  | 88687909 |
+| ANA    | F    | JARDINS | SAO PAULO      | CEL  | 78989765 |
+| ANA    | F    | JARDINS | SAO PAULO      | CEL  | 99766676 |
+| JORGE  | M    | CENTRO  | VITORIA        | CEL  | 78458743 |
+| JORGE  | M    | CENTRO  | VITORIA        | RES  | 56576876 |
+| JORGE  | M    | CENTRO  | VITORIA        | RES  | 89986668 |
++--------+------+---------+----------------+------+----------+
+
+SELECT C.NOME, C.SEXO, E.BAIRRO,E.CIDADE, T.TIPO, T.NUMERO
+FROM CLIENTE C   
+  INNER JOIN  ENDERECO E 
+  ON C.IDCLIENTE = E.ID_CLIENTE
+    INNER JOIN  TELEFONE T
+    ON C.IDCLIENTE = T.ID_CLIENTE;
+
++--------+------+---------+----------------+------+----------+
+| NOME   | SEXO | BAIRRO  | CIDADE         | TIPO | NUMERO   |
++--------+------+---------+----------------+------+----------+
+| JOAO   | M    | CENTRO  | RIO DE JANEIRO | CEL  | 87866896 |
+| JOAO   | M    | CENTRO  | RIO DE JANEIRO | RES  | 99667587 |
+| JOAO   | M    | CENTRO  | RIO DE JANEIRO | COM  | 66687899 |
+| CARLOS | M    | ESTACIO | RIO DE JANEIRO | COM  | 54768899 |
+| CARLOS | M    | ESTACIO | RIO DE JANEIRO | CEL  | 88687909 |
+| ANA    | F    | JARDINS | SAO PAULO      | CEL  | 78989765 |
+| ANA    | F    | JARDINS | SAO PAULO      | CEL  | 99766676 |
+| JORGE  | M    | CENTRO  | VITORIA        | CEL  | 78458743 |
+| JORGE  | M    | CENTRO  | VITORIA        | RES  | 56576876 |
+| JORGE  | M    | CENTRO  | VITORIA        | RES  | 89986668 |
++--------+------+---------+----------------+------+----------+
